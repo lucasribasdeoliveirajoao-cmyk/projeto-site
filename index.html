@@ -3,47 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Range rover</title>
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="estilo/style.CSS">
+    <title>Como surgiu a lenda Lionel Messi?</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           VARIÁVEIS DE DESIGN & REGRAS GERAIS
+           ========================================================================== */
+        :root {
+            --cor-fundo: #edf2f7;
+            --cor-primaria: #0b1a30;      /* Azul Marinho Profundo */
+            --cor-secundaria: #3b82f6;    /* Azul Celeste Argentina */
+            --cor-celeste-suave: #e0f2fe; /* Azul Clarinho para cards */
+            --cor-destaque: #eab308;      /* Dourado Ouro */
+            --cor-destaque-hover: #ca8a04;
+            --cor-texto: #1e293b;
+            --cor-texto-suave: #475569;
+            --cor-branca: #ffffff;
+            
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-corpo: 'Poppins', sans-serif;
+            
+            --sombra-card: 0 10px 25px -5px rgba(11, 26, 48, 0.1), 0 8px 10px -6px rgba(11, 26, 48, 0.05);
+            --sombra-forte: 0 20px 30px -10px rgba(11, 26, 48, 0.25);
+            --borda-raio: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            font-family: var(--fonte-corpo);
+            color: var(--cor-texto);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ==========================================================================
+           HEADER E NAVEGAÇÃO
+           ========================================================================== */
+        header {
+            background: linear-gradient(135deg, #0b1a30 0%, #1e3a8a 50%, #3b82f6 100%);
+            color: var(--cor-branca);
+            padding: 3rem 1.5rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Listras decorativas inspiradas na camisa da Argentina */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 40px,
+                rgba(255, 255, 255, 0.04) 40px,
+                rgba(255, 255, 255, 0.04) 80px
+            );
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cor-branca);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.8rem;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            max-width: 720px;
+            margin: 0 auto;
+            color: #dbeafe;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--cor-primaria);
+            padding: 0.8rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.ativo {
+            color: var(--cor-destaque);
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           CONTEÚDO PRINCIPAL (MAIN & ARTICLE)
+           ========================================================================== */
+        main {
+            max-width: 980px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        article {
+            background-color: var(--cor-branca);
+            padding: 2.5rem 2rem;
+            border-radius: var(--borda-raio);
+            box-shadow: var(--sombra-card);
+        }
+
+        article h1 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--cor-primaria);
+            border-bottom: 4px solid var(--cor-secundaria);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article h2 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(1.3rem, 3vw, 1.75rem);
+            color: var(--cor-primaria);
+            background: linear-gradient(90deg, var(--cor-celeste-suave), transparent);
+            padding: 0.4rem 0.8rem;
+            border-left: 5px solid var(--cor-secundaria);
+            margin: 2rem 0 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: var(--cor-texto);
+        }
+
+        article strong {
+            color: var(--cor-primaria);
+            font-weight: 700;
+        }
+
+        article a.externo {
+            color: var(--cor-secundaria);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        article a.externo:hover {
+            color: var(--cor-primaria);
+            border-bottom-color: var(--cor-destaque);
+        }
+
+        article a.externo::after {
+            content: " 🔗";
+            font-size: 0.8em;
+        }
+
+        /* ==========================================================================
+           MÍDIAS (IMAGENS, PICTURE & VÍDEO)
+           ========================================================================== */
+        picture, img.ilustracao {
+            display: block;
+            width: 100%;
+            margin: 1.8rem 0;
+        }
+
+        picture img, img.ilustracao {
+            width: 100%;
+            height: auto;
+            border-radius: var(--borda-raio);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            object-fit: cover;
+        }
+
+        .img-container {
+            position: relative;
+            background-color: #f1f5f9;
+            border-radius: var(--borda-raio);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .img-caption {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--cor-texto-suave);
+            padding: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Container Responsivo de Vídeo 16:9 */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+            height: 0;
+            margin: 2rem 0;
+            border-radius: var(--borda-raio);
+            overflow: hidden;
+            box-shadow: var(--sombra-card);
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           BLOCO ASIDE (CURIOSIDADES & CONQUISTAS)
+           ========================================================================== */
+        aside {
+            background-color: var(--cor-celeste-suave);
+            border: 2px solid var(--cor-destaque);
+            border-radius: var(--borda-raio);
+            padding: 1.8rem;
+            margin: 2.5rem 0;
+            box-shadow: var(--sombra-card);
+            position: relative;
+        }
+
+        aside h3 {
+            font-family: var(--fonte-titulo);
+            color: var(--cor-primaria);
+            background-color: var(--cor-destaque);
+            color: var(--cor-primaria);
+            padding: 0.5rem 1rem;
+            margin: -1.8rem -1.8rem 1.2rem -1.8rem;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        aside h3::before {
+            content: "🏆";
+        }
+
+        aside ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+        }
+
+        aside ul li {
+            background-color: var(--cor-branca);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        aside ul li::before {
+            content: "🥇";
+            font-size: 0.9rem;
+        }
+
+        abbr {
+            text-decoration: underline dotted var(--cor-secundaria);
+            cursor: help;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branca);
+            text-align: center;
+            padding: 1.8rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            border-top: 4px solid var(--cor-destaque);
+        }
+
+        footer a {
+            color: var(--cor-destaque);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
+           RESPONSIVIDADE EXTRA
+           ========================================================================== */
+        @media (max-width: 670px) {
+            article {
+                padding: 1.5rem 1.2rem;
+            }
+
+            nav {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            aside {
+                padding: 1.2rem;
+            }
+
+            aside h3 {
+                margin: -1.2rem -1.2rem 1rem -1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Como surgiram os primeiros Range Rovers</h1>
-        <p>Tudo aquilo que você sempre quis saber sobre o carro mais custo benefício da história, em um único lugar</p>
-    </header>
-    <img src="rangerover (1).jpeg" alt="Range Rover">
 
+    <header>
+        <h1>Curiosidades do Futebol</h1>
+        <p>Tudo aquilo que você sempre quis saber sobre o mundo da bola e suas maiores lendas, em um único lugar</p>
+    </header>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Noticias</a>
+        <a href="#" class="ativo">Home</a>
+        <a href="#">Notícias</a>
+        <a href="#">Títulos</a>
         <a href="#">Contato</a>
     </nav>
+
     <main>
         <article>
-            <section>
-                <h1>História</h1>
-                <p>O Range Rover foi lançado oficialmente em 17 de junho de 1970 pela <strong>Land Rover</strong>, criado para misturar a força no fora de estrada com o conforto de um carro de passeio.</p>
-            </section>
+            <h1>A História da Lenda: Lionel Messi</h1>
+            
+            <p>Provavelmente você sabe que <strong>Lionel Andrés Messi</strong>, lendário camisa 10 da seleção da <strong>Argentina</strong> e ícone do futebol mundial, é considerado por muitos o maior jogador de todos os tempos. Mas talvez você não saiba que o seu caminho até o topo do planeta bola teve um início cheio de superações, diagnósticos médicos desafiadores e até um contrato assinado em um guardanapo de papel! Acompanhe este artigo para conhecer detalhes fascinantes sobre a trajetória do ET de Rosário.</p>
 
-            <section>
-                <h2>A primeira versão</h2>
-                <ul>
-                    <li><strong>Carroceria:</strong> Inicialmente fabricado apenas com duas portas (a versão de quatro portas chegou apenas em 1981).</li>
-                    <li><strong>Tração:</strong> Contava com tração integral permanente nas quatro rodas, uma inovação para a época em que a maioria dos utilitários usava tração selecionável.</li>
-                </ul>
-            </section>
-            <picture>
+            <h2>A Primeira Jogada</h2>
+
+            <p>A história começa na cidade de Rosário, na Argentina. Nascido em 24 de junho de 1987, Messi deu seus primeiros chutes no clube local Grandoli e logo chamou a atenção no <a href="https://www.newellsoldboys.com.ar/" target="_blank" class="externo">Newell's Old Boys</a>. No entanto, aos 11 anos, a família enfrentou um duro obstáculo: Lionel foi diagnosticado com deficiência do hormônio do crescimento (GHD). O tratamento era caríssimo e os clubes argentinos da época não conseguiram bancar os custos das medicação diária.</p>
+
+            <!-- Picture Element para Responsividade de Imagens -->
+            <div class="img-container">
                 <picture>
-                    <source media="(min-width:670px)" srcset="rangerover2.jpg">
-                    <img src="rangerover2.jpg" alt="rangerover" class="img-destaque">
+                    <!-- Versão para telas maiores -->
+                    <source media="(min-width: 670px)" srcset="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=900&q=80">
+                    <!-- Versão fallback para dispositivos móveis -->
+                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=500&q=80" alt="Início nos gramados da Argentina">
                 </picture>
-        </article>     
-               
+                <p class="img-caption">O pequeno prodígio de Rosário surpreendia a todos pelo controle de bola impecável.</p>
+            </div>
+
+            <p>Essa dificuldade inicial revelou a resiliência do jovem garoto, que mesmo com estatura menor que os demais, utilizava seu baixo centro de gravidade para driblar adversários com facilidade inacreditável.</p>
+
+            <h2>Surge um Astro Mundial</h2>
+
+            <p>A reviravolta aconteceu no ano de 2000. O diretor esportivo do <a href="https://www.fcbarcelona.com/" target="_blank" class="externo">FC Barcelona</a>, Carles Rexach, ficou sabendo do talento de Messi. Após ver o garoto jogar por poucos minutos, ficou tão fascinado que decidiu contratá-lo imediatamente. Como não havia papel oficial no restaurante da reunião, o primeiro compromisso do Barcelona em arcar com o tratamento e contratar Messi foi assinado no verso de um <strong>guardanapo de papel</strong>.</p>
+
+            <div class="img-container">
+                <picture>
+                    <source media="(min-width: 670px)" srcset="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80" alt="Estádio de Futebol e a Glória Europeia">
+                </picture>
+                <p class="img-caption">No Camp Nou, Messi transformaria o futebol moderno em arte.</p>
+            </div>
+
+            <p>O resto é história pura: no Barcelona, Messi se tornou o maior artilheiro da história do clube, conquistando dezenas de títulos e encantando o mundo com genialidade pura, visão de jogo única e arrancadas inesquecíveis com a perna esquerda.</p>
+
+            <!-- Vídeo Incorporado Responsivo -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/watch?v=z56t-SUuUdk" title="Lionel Messi Highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <aside>
+                <h3>Quer aprender mais?</h3>
+                <p>Confira a incrível galeria de conquistas individuais e coletivas que consagram Lionel Messi como a lenda viva do esporte mundial:</p>
+                <ul>
+                    <li>2009 - <abbr title="Primeira Bola de Ouro conquistada após a Tríplice Coroa com o Barcelona">1ª Bola de Ouro</abbr></li>
+                    <li>2010 - <abbr title="Segunda Bola de Ouro consecutiva">2ª Bola de Ouro</abbr></li>
+                    <li>2011 - <abbr title="Terceira Bola de Ouro, marcando época no melhor Barça da história">3ª Bola de Ouro</abbr></li>
+                    <li>2012 - <abbr title="Quarta Bola de Ouro no ano em que marcou inacreditáveis 91 gols">4ª Bola de Ouro</abbr></li>
+                    <li>2015 - <abbr title="Quinta Bola de Ouro liderando o ataque do trio MSN">5ª Bola de Ouro</abbr></li>
+                    <li>2019 - <abbr title="Sexta Bola de Ouro com atuações espetaculares">6ª Bola de Ouro</abbr></li>
+                    <li>2021 - <abbr title="Sétima Bola de Ouro após quebrar o jejum com a Argentina na Copa América">7ª Bola de Ouro</abbr></li>
+                    <li>2023 - <abbr title="Oitava Bola de Ouro consagrando a vitória na Copa do Mundo 2022">8ª Bola de Ouro</abbr></li>
+                </ul>
+                <p>Além das premiações individuais, Messi realizou o grande sonho da sua carreira ao liderar a seleção da <strong>Argentina</strong> nas conquistas da <strong>Copa América 2021</strong> e da gloriosa <strong>Copa do Mundo do Catar em 2022</strong>.</p>
+                <p>Acesse aqui o perfil de <a href="https://www.fifa.com/" target="_blank" class="externo">Histórico da FIFA</a> para navegar por todas as estatísticas oficiais do camisa 10.</p>
+            </aside>
+
+            <p>E é isso! Esperamos que você tenha gostado do nosso artigo sobre a trajetória extraordinária do genial <strong>Lionel Messi</strong>, o homem que transformou o futebol em poesia em movimento.</p>
+        </article>
     </main>
+
     <footer>
-        <p>&copy; SITE FEITO PARA AMANTES DE RANGE ROVERS</p>
+        <p>Site adaptado com paixão em homenagem ao futebol de <a href="https://www.instagram.com/leomessi" target="_blank">Lionel Messi</a> • Inspirado no projeto do <a href="https://www.youtube.com/@CursoemVideo" target="_blank">Curso em Vídeo</a> de Gustavo Guanabara.</p>
     </footer>
+
 </body>
 </html>
